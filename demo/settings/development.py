@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
@@ -43,5 +43,5 @@ DATABASES = {
     }
 }
 
-STRIPE_PUBLIC_KEY = 'your-public-key'
-STRIPE_SECRET_KEY = 'your-secret-key'
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')

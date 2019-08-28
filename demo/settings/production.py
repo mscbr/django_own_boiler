@@ -13,14 +13,14 @@ AUTH_PASSWORD_VALIDATORS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'your-db-name',
-        'USER': 'your-db-username',
-        'PASSWORD': 'your-db-password',
-        'HOST': 'localhost',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
         'PORT': ''
     }
 }
 
 
-STRIPE_PUBLIC_KEY = 'your-live-public-key'
-STRIPE_SECRET_KEY = 'your-live-secret-key'
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
